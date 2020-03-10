@@ -1,0 +1,83 @@
+.menu > li {
+  display: inline;
+  color: #ffffff;
+  padding: 0.5rem;
+  margin: 1rem;
+
+  &.active {
+    color: #ffc107;
+  }
+}
+
+li {
+  &:nth-child(1) {
+    &::before {
+      content: url("../assets/ico_dashboard.svg");
+      transform: translate(-30px, -5px);
+      position: absolute;
+    }
+  }
+  &:nth-child(2) {
+    &::before {
+      content: url("../assets/ico_users.svg");
+      transform: translate(-30px, -5px);
+      position: absolute;
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      content: url("../assets/ico_sessionmanager.svg");
+      transform: translate(-30px, -5px);
+      position: absolute;
+    }
+  }
+}
+
+header {
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 4fr auto;
+}
+
+.search {
+  &::after {
+    content: url("../assets/ico_search.svg");
+  }
+}
+
+.addUser {
+  background-color: #ffc107;
+  color: #ffffff;
+  border: 1px solid #cccccc;
+  &::before {
+    content: url("../assets/ico_add.svg");
+  }
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+}
+
+//new
+.heading {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.logo {
+  height: 24px;
+  width: 100px;
+}
+
+mat-nav-list {
+  mat-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+span {
+  margin: 1rem;
+}

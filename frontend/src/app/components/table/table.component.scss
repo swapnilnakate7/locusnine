@@ -1,0 +1,75 @@
+table {
+  &.mat-table {
+    width: 80%;
+    margin: 0  auto;
+  }
+}
+
+
+
+
+
+$status-icon-size: 10 px;
+$edit-icon-size: 15 px;
+.mat-icon {
+
+  &.status {
+    width: 10px;
+    height: 10px;
+  }
+
+  &.edit {
+
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.tableHead {
+  width: 80%;
+  margin: .5rem  auto 0;
+  top: 3rem;
+
+  display: grid;
+  grid-template-columns: 1fr  1fr 150px;
+  grid-template-rows: 1fr;
+
+
+  :nth-child(2){
+    text-align: right;
+  }
+
+
+  :nth-child(3){
+    text-align: right;
+  }
+
+
+
+
+}
+
+.addUserBtn{
+  background-color: #ffaf2b;
+  color: #ffffff;
+  border: none;
+  margin: .5rem .2rem;
+  width: 135px;
+
+
+}
+
+
+.searchBox{
+  //width: 100px;
+  width: 150px;
+
+}
+
+.searchBoxform{
+  // min-width: 150px;
+  // max-width: 500px;
+  // width: 100%;
+ // width: 150px;
+
+}

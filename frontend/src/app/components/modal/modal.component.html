@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="content">
+    <h2>Edit User Details</h2>
+    <div class="close"><mat-icon
+      svgIcon="close" (click)="closeModal()"></mat-icon></div>
+    <form [formGroup]="userDetail"
+    (ngSubmit)="submitEdit(userDetail.valid)">
+      <mat-form-field>
+        <mat-label>
+          Status
+        </mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let st of listStatus"
+          [value]="st"
+          >{{
+            st.value
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>
+          Contact
+        </mat-label>
+
+        <input matInput type="text" formControlName="contactNumber" />
+      </mat-form-field>
+      <mat-radio-group formControlName="roles">
+        <mat-radio-button
+        *ngFor="let role of listRoles"
+          [value]="role"
+          [checked]="roles.value.code == role.code"
+          >{{role.value}}</mat-radio-button
+        >
+        <!-- <mat-radio-button
+          [value]="listRoles[1].code"
+          [checked]="roles.value.code == listRoles[1].code"
+          >Customer Executive</mat-radio-button
+        > -->
+      </mat-radio-group>
+
+      <button matButton type="submit"
+      class="modalSubmit">Submit</button>
+      <button matButton
+      class="modalDelete" (click)="deleteUser()">Delete</button>
+
+    </form>
+  </div>
+</div>

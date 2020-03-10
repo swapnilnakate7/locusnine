@@ -1,0 +1,80 @@
+<!-- <header>
+  <div><img src="../assets/Logo.svg" /></div>
+  <div>
+    <ul class="menu">
+      <li routerLinkActive="active">Dashboard</li>
+      <li routerLink="/users" routerLinkActive="active">Users</li>
+      <li>Session Manager</li>
+    </ul>
+  </div>
+</header>
+<div class="options">
+  <div><img src="../assets/ico_users.svg" /> Users</div>
+  <div>
+
+    <input type="text" class="search" />
+  </div>
+  <div><button class="addUser" (click)="toggleAdduser()">Add User</button></div>
+</div>
+<sn-modal *ngIf="isPopup"></sn-modal> -->
+
+<mat-toolbar class="heading">
+  <mat-toolbar-row role="heading">
+    <mat-icon class="logo" svgIcon="logo"></mat-icon>
+
+    <mat-nav-list>
+      <span>
+        <mat-icon
+          svgIcon="dashboard"
+          aria-hidden="false"
+          aria-label="Example thumbs up SVG icon"
+        ></mat-icon>
+        Dashboard
+      </span>
+      <span>
+        <mat-icon
+          svgIcon="users"
+          aria-hidden="false"
+          aria-label="Example thumbs up SVG icon"
+        ></mat-icon>
+        Users
+      </span>
+      <span>
+        <mat-icon
+          svgIcon="sessionmanager"
+          aria-hidden="false"
+          aria-label="Example thumbs up SVG icon"
+        ></mat-icon>
+        SessionManager
+      </span>
+
+
+    </mat-nav-list>
+    <mat-nav-list>
+      <span>
+        <mat-icon
+        svgIcon="notification"
+        aria-hidden="false"
+        aria-label="Example thumbs up SVG icon"
+      ></mat-icon>
+      </span>
+      <span>
+        <mat-icon
+        svgIcon="user"
+        aria-hidden="false"
+        aria-label="Example thumbs up SVG icon"
+      ></mat-icon>John Smith
+      </span>
+      <span>
+        <mat-icon
+        svgIcon="down"
+        aria-hidden="false"
+        aria-label="Example thumbs up SVG icon"
+      ></mat-icon>
+      </span>
+    </mat-nav-list>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+<router-outlet></router-outlet>
