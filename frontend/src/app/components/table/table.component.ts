@@ -34,6 +34,7 @@ export class TableComponent implements OnInit {
   dataSource;
 
   @Output() editEvent = new EventEmitter<User>();
+  @Output() addEvent = new EventEmitter<boolean>();
 
   displayedColumns: string[] = ["name", "email", "role", "status", "action"];
 
@@ -84,6 +85,10 @@ export class TableComponent implements OnInit {
     this.editEvent.emit(el);
   }
 
+  add() {
+    this.addEvent.emit(true);
+  }
+
   getRole(roleCode): string {
     let roleVal = "";
     ROLES.forEach(role => {
@@ -121,9 +126,9 @@ export class TableComponent implements OnInit {
     const filteredArr = this.userList.filter(u => {
       return (
         u.name.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) !=
-          -1 ||
+        -1 ||
         u.email.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) !=
-          -1 ||
+        -1 ||
         ROLES_MAP[u.role]
           .toLocaleLowerCase()
           .indexOf(searchText.toLocaleLowerCase()) > -1 ||

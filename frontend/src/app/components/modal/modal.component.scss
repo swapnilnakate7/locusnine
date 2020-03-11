@@ -7,9 +7,11 @@
   display: block;
   position: absolute;
   backdrop-filter: blur(2px);
+
+
   .content {
     width: 50%;
-    height: 275px;
+    height: 50vh;
     position: relative;
     color: #000000;
     background-color: #ffffff;
@@ -21,6 +23,10 @@
 
     h2 {
       float: left;
+    }
+
+    &.addUserModal{
+      height: 23rem;
     }
   }
 }

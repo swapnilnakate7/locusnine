@@ -1,4 +1,10 @@
-<sn-table [userList]="users" (editEvent)="editUser($event)" ></sn-table>
+<sn-table [userList]="users"
+ (editEvent)="editUser($event)"
+ (addEvent)="toggleAdd()"
+ ></sn-table>
 <sn-modal *ngIf="isEdit"
-[user]="userToEdit"
-(modalClose)="toggleEdit($event)"></sn-modal>
+ [user]="userToEdit"
+  (modalClose)="toggleEdit($event)"></sn-modal>
+
+  <sn-modal *ngIf="isAdd"
+  (modalClose)="addUser($event)"></sn-modal>

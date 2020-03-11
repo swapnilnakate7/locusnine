@@ -15,6 +15,7 @@ export class UserListComponent implements OnInit {
   users: User[] = [];
   sortedData: User[];
   isEdit: boolean = false;
+  isAdd: boolean = false;
   userToEdit: User;
   constructor(
     private userService: UserService,
@@ -51,15 +52,53 @@ export class UserListComponent implements OnInit {
 
   toggleEdit(e) {
     this.isEdit = !this.isEdit;
-    console.log('event',e);
-    console.log('isEdit',this.isEdit);
-    if(e){
-      this.router.navigateByUrl('/');
+    console.log('event', e);
+    console.log('isEdit', this.isEdit);
+    if (e === 'delete') {
+      console.log('deleteUserUsersList', e, this.userToEdit);
+      this.userService.deleteUser(this.userToEdit['_id'])
+        .subscribe((response) => {
+          console.log('deletedUserWithServiceCall', response);
+        });
     }
+
+    if (e === 'update') {
+      console.log('updateUserUsersList', e, this.userToEdit);
+      this.userService.updateUser(this.userToEdit)
+        .subscribe((response) => {
+          console.log('updatedUser', response);
+        });
+    }
+
+    if (e === 'edit') {
+      console.log('editUserUsersList', e, this.userToEdit);
+    }
+
+
   }
 
   editUser(e) {
-    this.toggleEdit(e);
+    this.toggleEdit('edit');
     this.userToEdit = e;
+  }
+
+  addUser(e) {
+    console.log('addUser', e);
+    if (e.action === 'add') {
+      this.userService.addUser(e.data)
+        .subscribe((response) => {
+          console.log('response', response);
+          this.toggleAdd();
+        });
+    }
+
+    if (e === 'close') {
+      this.toggleAdd();
+    }
+
+  }
+
+  toggleAdd() {
+    this.isAdd = !this.isAdd;
   }
 }
